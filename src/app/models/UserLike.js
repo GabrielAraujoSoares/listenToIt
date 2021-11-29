@@ -8,6 +8,7 @@ class UserLike extends Model {
           type: DataTypes.INTEGER,
         },
         idmusic: {
+          primaryKey: true,
           type: DataTypes.INTEGER,
         },
         idalbum: {
