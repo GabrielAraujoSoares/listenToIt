@@ -1,10 +1,10 @@
 import { Model, DataTypes } from "sequelize";
 
-class Music extends Model {
+class Album extends Model {
   static init(sequelize) {
     super.init(
       {
-        idmusic: {
+        idalbum: {
           primaryKey: true,
           type: DataTypes.INTEGER,
           autoIncrement: true,
@@ -13,26 +13,18 @@ class Music extends Model {
           type: DataTypes.DATE,
           defaultValue: DataTypes.NOW,
         },
-        musicname: {
-          type: DataTypes.STRING,
-        },
-        idartist: DataTypes.INTEGER,
-        idalbum: {
+        idartist: {
           type: DataTypes.INTEGER,
         },
+        albumname: DataTypes.STRING,
+        albumyear: DataTypes.STRING,
         spotifycode: DataTypes.STRING,
-        youtubecode: {
-          type: DataTypes.STRING,
-        },
-        havelyrics: {
-          type: DataTypes.BOOLEAN,
-        },
       },
       {
         sequelize,
-        tableName: "Music",
-        modelName: "Music",
-        updatedAt: "updatedat",
+        tableName: "Album",
+        modelName: "Album",
+        updatedAt: false,
         createdAt: "createdat",
       }
     );
@@ -41,4 +33,4 @@ class Music extends Model {
   }
 }
 
-export default Music;
+export default Album;

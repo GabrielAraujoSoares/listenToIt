@@ -10,7 +10,7 @@ class Submit extends Model {
           type: DataTypes.INTEGER,
           autoIncrement: true,
         },
-        createdAt: {
+        createdat: {
           type: DataTypes.DATE,
           defaultValue: DataTypes.NOW,
         },

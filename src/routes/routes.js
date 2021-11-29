@@ -6,9 +6,9 @@ import SessionController from "../app/controllers/SessionController";
 import UserController from "../app/controllers/UserController";
 import SubmitController from "../app/controllers/SubmitController";
 import FileController from "../app/controllers/FileController";
+import MusicController from "../app/controllers/MusicController";
 
 import authMiddleware from "../app/middlewares/auth";
-import SubmitController from "../app/controllers/SubmitController";
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -31,6 +31,9 @@ routes.post("/submits", SubmitController.create);
 routes.get("/submits", SubmitController.get);
 
 routes.put("/submits", SubmitController.update);
+
+// Music
+routes.get("/musics", MusicController.list);
 
 routes.post("/files", upload.single("file"), FileController.store);
 

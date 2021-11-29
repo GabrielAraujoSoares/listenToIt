@@ -2,8 +2,12 @@ import Sequelize from "sequelize";
 import databaseConfig from "../config/database";
 import User from "../app/models/User";
 import Submit from "../app/models/Submit";
+import Music from "../app/models/Music";
+import Artist from "../app/models/Artist";
+import Album from "../app/models/Album";
+import UserLike from "../app/models/UserLike";
 
-const models = [User, Submit];
+const models = [User, Submit, Music, Artist, Album, UserLike];
 
 class Database {
   constructor() {
