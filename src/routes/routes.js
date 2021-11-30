@@ -2,13 +2,13 @@ import { Router } from "express";
 import multer from "multer";
 import multerConfig from "../config/multer";
 
-import SessionController from "../app/controllers/SessionController";
 import UserController from "../app/controllers/UserController";
 import SubmitController from "../app/controllers/SubmitController";
 import FileController from "../app/controllers/FileController";
 import MusicController from "../app/controllers/MusicController";
 
 import authMiddleware from "../app/middlewares/auth";
+import UserLikeController from "../app/controllers/UserLikeController";
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -34,6 +34,8 @@ routes.put("/submits", SubmitController.update);
 
 // Music
 routes.get("/musics", MusicController.list);
+
+routes.get("/music/like/:idMusic/:idUser", UserLikeController.like);
 
 routes.post("/files", upload.single("file"), FileController.store);
 

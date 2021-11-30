@@ -15,11 +15,16 @@ class UserLike extends Model {
           type: DataTypes.INTEGER,
         },
         idartist: DataTypes.INTEGER,
+        deletedat: {
+          type: DataTypes.DATE,
+          defaultValue: null,
+        },
       },
       {
         sequelize,
         tableName: "UserLike",
         modelName: "UserLike",
+        deletedAt: "deletedat",
         updatedAt: false,
         createdAt: false,
       }
